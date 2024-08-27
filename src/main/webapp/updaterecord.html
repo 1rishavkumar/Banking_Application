@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Record</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        table input[type="text"],
+        table input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        ul.nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: #28a745;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        ul.nav li {
+            display: inline-block;
+        }
+        ul.nav a {
+            display: block;
+            padding: 14px 100px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+            font-size: 16px;
+        }
+        ul.nav a:hover,
+        ul.nav li.current a {
+            background: #fff;
+            color: #28a745;
+        }
+        .sub {
+            background-color: #28a745;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .sub:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function validateUpdate() {
+            var uname = document.update.uname.value;
+            var newPwd = document.update.newPwd.value;
+            var cnfm = document.update.cnfm.value;
+            if (uname == null || uname == "") {
+                alert("User name Cannot be Empty");
+                return false;
+            }
+            if (newPwd == null || newPwd == "") {
+                alert("New Password Cannot be Empty");
+                return false;
+            }
+            if (cnfm == null || cnfm == "") {
+                alert("Confirm Password Cannot be Empty");
+                return false;
+            }
+            if (newPwd != cnfm) {
+                alert("New Password does not match with Confirm Password");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Digital Banking</h1>
+    <ul class="nav">
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="withdraw.html">Withdraw Amount</a></li>
+        <li><a href="deposit.html">Deposit Amount</a></li>
+        <li><a href="getrecord.html">Get Details</a></li>
+        <li><a href="updaterecord.html">Update Details</a></li>
+        <li><a href="deleterecord.html">Delete Account</a></li>
+        <li><a href="transfer.html">Transfer Amount</a></li>
+        <li><a href="CreditCard">Credit Card</a></li>
+        <li><a href="Logout">Logout</a></li>
+    </ul>
+    <div class="container">
+        <h3>Update Record Form</h3>
+        <form name="update" action="UpdateRecord" method="post" onsubmit="return validateUpdate()">
+            <table>
+                <tr>
+                    <td>Enter User Name:</td>
+                    <td><input type="text" name="uname" /></td>
+                </tr>
+                <tr>
+                    <td>Enter New Password:</td>
+                    <td><input type="password" name="newPwd" /></td>
+                </tr>
+                <tr>
+                    <td>Confirm New Password:</td>
+                    <td><input type="password" name="cnfm" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input class="sub" type="submit" value="Update Record" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

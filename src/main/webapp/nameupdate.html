@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update Account Details</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+        h3 {
+            text-align: center;
+            color: #555;
+        }
+        table {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Ensure rounded corners work */
+        }
+        table td {
+            padding: 10px;
+        }
+        table th {
+            background-color: green;
+            color: white;
+            padding: 10px;
+        }
+        nav {
+            width: 100%;
+        }
+        ul.nav {
+            list-style: none;
+            height: 36px;
+            line-height: 36px;
+            background: green;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            padding: 0;
+            margin: 0;
+        }
+        ul.nav li {
+            border: 2px solid white;
+            float: left;
+        }
+        ul.nav a {
+            display: block;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        ul.nav a:hover,
+        ul.nav li.current a {
+            color: green;
+            background: white;
+        }
+        .form-container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .form-container input[type="text"] {
+            width: calc(100% - 22px); /* Adjust for padding and borders */
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .form-container input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+    </style>
+    <script>
+        function validate() {
+            var anum = document.nameupdate.anum.value;
+            if (anum == null || anum.trim() === "") {
+                alert("Account Number Cannot be Empty");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="createaccount.html">Create Account</a></li>
+        <li><a href="withdraw.html">Withdraw Amount</a></li>
+        <li><a href="deposit.html">Deposit Amount</a></li>
+        <li><a href="getrecord.html">Get Details</a></li>
+        <li><a href="updaterecord.html">Update Details</a></li>
+        <li><a href="deleterecord.html">Delete Account</a></li>
+        <li><a href="transfer.html">Transfer Amount</a></li>
+        <li><a href="CreditCard.html">Credit Card</a></li>
+        <li><a href="Logout.html">Logout</a></li>
+    </ul>
+    <div class="form-container">
+        <h1>Update Account Details</h1>
+        <form name="nameupdate" action="NameUpdate" method="get" onsubmit="return validate()">
+            <table>
+                <tr>
+                    <td>Enter Account Number:</td>
+                    <td><input type="text" name="anum" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Get Details" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

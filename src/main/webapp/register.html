@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h3 {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        ul.nav {
+            list-style: none;
+            height: 36px;
+            line-height: 36px;
+            background: green;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        ul.nav li {
+            border: 1px solid white;
+            float: left;
+        }
+        ul.nav a {
+            display: block;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        ul.nav a:hover,
+        ul.nav li.current a {
+            color: green;
+            background: white;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function validate() {
+            var uname = document.register.uname.value;
+            var pwd = document.register.pwd.value;
+            var cnfm = document.register.cnfm.value;
+            if (uname == null || uname == "") {
+                alert("User name Cannot be Empty");
+                return false;
+            } else if (pwd == null || pwd == "") {
+                alert("Password Cannot be Empty");
+                return false;
+            } else if (cnfm == null || cnfm == "") {
+                alert("Confirm Password cannot be Empty");
+                return false;
+            } else if (pwd != cnfm) {
+                alert("Password does not Match with Confirm Password");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="branches.html">OUR BRANCHES</a></li>
+        <li><a href="emlcalc.html">LOAN EMI CALCULATOR</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+    <h1>Welcome to Digital Banking</h1>
+    <h3>Registration Form</h3>
+    <div class="form-container">
+        <form name="register" action="Register" method="post" onsubmit="return validate()">
+            <table>
+                <tr>
+                    <td>Enter user name:</td>
+                    <td><input type="text" name="uname" /></td>
+                </tr>
+                <tr>
+                    <td>Enter Password:</td>
+                    <td><input type="password" name="pwd" /></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" name="cnfm" /></td>
+                </tr>
+                <tr>
+                    <td colspan='2' align='center'><input class="sub" type="submit" value="Register" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

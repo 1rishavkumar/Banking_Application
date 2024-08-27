@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Digital Banking</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+        nav {
+            width: 100%;
+        }
+        ul.nav {
+            list-style: none;
+            height: 36px;
+            line-height: 36px;
+            background: green;
+            font-size: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        ul.nav li {
+            border: 2px solid white;
+            float: left;
+        }
+        ul.nav a {
+            display: block;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        ul.nav a:hover,
+        ul.nav li.current a {
+            color: green;
+            background: white;
+        }
+        .image-container {
+            margin-top: 20px;
+            width: 150px; /* Width for passport size */
+            height: 150px; /* Height for passport size */
+            overflow: hidden; /* Hide overflow */
+            display: inline-block; /* Center align */
+        }
+        .image-container img {
+            width: 100%; /* Ensure image fits the container */
+            height: 100%; /* Ensure image fits the container */
+            object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Digital Banking</h1>
+    <ul class="nav">
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="branches.html">OUR BRANCHES</a></li>
+          <li><a href="emlcalc.html">LOAN EMI CALCULATOR</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+    </ul>
+    <div class="image-container">
+        <img src="istockphoto-626702872-612x612.jpg" alt="Digital Banking">
+    </div>
+</body>
+</html>
